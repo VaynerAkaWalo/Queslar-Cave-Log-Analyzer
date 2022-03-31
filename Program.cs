@@ -31,6 +31,9 @@ namespace Queslar_Cave_Log_Analyzer
 
 
             Report rep = new Report(logs.ToString());
+
+            Console.WriteLine($"caves: {rep.Caves}, Total time in hours: {rep.TotalTime}");
+            Console.WriteLine($"diamonds: {rep.Diamonds}, Gold: {rep.Gold}");
         }
     }
 }

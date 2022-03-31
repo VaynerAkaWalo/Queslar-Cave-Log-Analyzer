@@ -18,11 +18,11 @@ namespace Queslar_Cave_Log_Analyzer
             set { caves = value; }
         }
 
-        #region LnfoProperties
+        #region InfoProperties
 
-        private int totalTime;
+        private double totalTime;
 
-        public int TotalTime
+        public double TotalTime
         {
             get { return totalTime; }
             set { totalTime = value; }
@@ -61,6 +61,14 @@ namespace Queslar_Cave_Log_Analyzer
         }
 
         private int tilesTraveled;
+
+        private int tilesTraveledOccurred;
+
+        public int TilesTraveledOccurred
+        {
+            get { return tilesTraveledOccurred; }
+            set { tilesTraveledOccurred = value; }
+        }
 
         public int TilesTraveled
         {
@@ -103,9 +111,9 @@ namespace Queslar_Cave_Log_Analyzer
             set { diamonds = value; }
         }
 
-        private int gold;
+        private ulong gold;
 
-        public int Gold
+        public ulong Gold
         {
             get { return gold; }
             set { gold = value; }
@@ -169,19 +177,46 @@ namespace Queslar_Cave_Log_Analyzer
 
         public Report(string log)
         {
-            //Console.WriteLine(log);
 
             MatchCollection startMC = RegexPattern.startTime.Matches(log);
             MatchCollection endMC = RegexPattern.endTime.Matches(log);
 
-            //Caves = startMC.Count;
+            MatchCollection startingdepthMC = RegexPattern.startingDepth.Matches(log);
+            MatchCollection finishingdepthMC = RegexPattern.finishingDepth.Matches(log);
 
-            for(int i = 0; i < endMC.Count; i++)
+            MatchCollection diamondsMC = RegexPattern.diamonds.Matches(log);
+            MatchCollection goldMC = RegexPattern.gold.Matches(log);
+
+            if(startMC.Count == endMC.Count)
             {
-                Console.WriteLine($"koniec: {endMC[i]}");
-            }
+                for(int i = 0; i < startMC.Count; i++)
+                {
+                    DateTime start = DateTime.Parse(startMC[i].ToString());
+                    DateTime end = DateTime.Parse(endMC[i].ToString());
 
-            Console.WriteLine($"MonkaHmm {startMC.Count} {endMC.Count}");
+                    TotalTime += (end - start).TotalHours;
+                    Caves++;
+
+                }
+
+                if(startingdepthMC.Count == finishingdepthMC.Count)
+                {
+                    for(int i = 0; i < startingdepthMC.Count; i++)
+                    {
+                        TotalDepthDiff += int.Parse(finishingdepthMC[i].ToString().Replace(",","")) - int.Parse(startingdepthMC[i].ToString().Replace(",", ""));
+                        TotalDepthDiff++;
+                    }
+                }
+
+                for (int i = 0; i < diamondsMC.Count; i++)
+                    Diamonds += int.Parse(diamondsMC[i].ToString().Replace(",", ""));
+
+                for (int i = 0; i < goldMC.Count; i++)
+                {
+                    Gold += ulong.Parse(goldMC[i].ToString().Replace(",", ""));
+                }
+                    
+            }
         }
 
     }
