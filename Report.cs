@@ -175,6 +175,36 @@ namespace Queslar_Cave_Log_Analyzer
 
         #endregion
 
+        public static int Sumint(Regex regex, string log)
+        {
+            int sum = 0;
+
+            MatchCollection mc = regex.Matches(log);
+
+            for(int i = 0; i < mc.Count; i++)
+            {
+                if(mc[i].ToString() != "??")
+                   sum += int.Parse(mc[i].ToString().Replace(",",""));
+            }
+
+            return sum;
+        }
+
+        public static ulong Sumulong(Regex regex, string log)
+        {
+            ulong sum = 0;
+
+            MatchCollection mc = regex.Matches(log);
+
+            for (int i = 0; i < mc.Count; i++)
+            {
+                if (mc[i].ToString() != "??")
+                    sum += ulong.Parse(mc[i].ToString().Replace(",", ""));
+            }
+
+            return sum;
+        }
+
         public Report(string log)
         {
 
@@ -208,13 +238,9 @@ namespace Queslar_Cave_Log_Analyzer
                     }
                 }
 
-                for (int i = 0; i < diamondsMC.Count; i++)
-                    Diamonds += int.Parse(diamondsMC[i].ToString().Replace(",", ""));
+                Diamonds = Sumint(RegexPattern.diamonds, log);
 
-                for (int i = 0; i < goldMC.Count; i++)
-                {
-                    Gold += ulong.Parse(goldMC[i].ToString().Replace(",", ""));
-                }
+                Gold = Sumulong(RegexPattern.gold, log);
                     
             }
         }
