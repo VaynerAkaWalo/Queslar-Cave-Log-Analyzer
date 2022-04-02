@@ -161,7 +161,7 @@ namespace Queslar_Cave_Log_Analyzer
 
         private ulong monster_strength;
 
-        public ulong Monster_strenth
+        public ulong Monster_strength
         {
             get { return monster_strength; }
             set { monster_strength = value; }
@@ -177,7 +177,7 @@ namespace Queslar_Cave_Log_Analyzer
 
         private ulong monster_agility;
 
-        public ulong Monster_Agility
+        public ulong Monster_agility
         {
             get { return monster_agility; }
             set { monster_agility = value; }
@@ -506,6 +506,25 @@ namespace Queslar_Cave_Log_Analyzer
                 Diamonds = Sumint(RegexPattern.diamonds, log);
 
                 Gold = Sumulong(RegexPattern.gold, log);
+
+
+                Monster_strength = Sumulong(RegexPattern.monster_strength, log);
+
+                Monster_health = Sumulong(RegexPattern.monster_health, log);
+
+                Monster_agility = Sumulong(RegexPattern.monster_agility, log);
+
+                Monster_dexterity = Sumulong(RegexPattern.monster_dexterity, log);
+
+
+                Strength = Sumulong(RegexPattern.strength, log);
+
+                Health = Sumulong(RegexPattern.health, log);
+
+                Agility = Sumulong(RegexPattern.agility, log);
+
+                Dexterity = Sumulong(RegexPattern.dexterity, log);
+
                     
             }
         }

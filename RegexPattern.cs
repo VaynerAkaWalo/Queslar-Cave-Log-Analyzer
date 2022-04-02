@@ -31,5 +31,23 @@ namespace Queslar_Cave_Log_Analyzer
         public static Regex diamonds = new Regex("(?<=Diamonds: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
 
         public static Regex gold = new Regex("(?<=Shattered Fighter Gold: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex monster_strength = new Regex("(?<=Monster.Strength:.)[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex monster_health = new Regex("(?<=Monster.Health:.)[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex monster_agility = new Regex("(?<=Monster.Agility:.)[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex monster_dexterity = new Regex("(?<=Monster.Dexterity:.)[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex strength = new Regex("(?<!Monster.Strength:.)(?<=Strength: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex health = new Regex("(?<!Monster.Health:.)(?<=Health: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex agility = new Regex("(?<!Monster.Agility:.)(?<=Agility: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex dexterity = new Regex("(?<!Monster.Dexterity:.)(?<=Dexterity: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
     }
 }

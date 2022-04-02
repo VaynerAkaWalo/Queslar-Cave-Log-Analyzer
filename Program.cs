@@ -34,6 +34,7 @@ namespace Queslar_Cave_Log_Analyzer
 
             Console.WriteLine($"caves: {rep.Caves}, Total time in hours: {rep.TotalTime}");
             Console.WriteLine($"diamonds: {rep.Diamonds}, Gold: {rep.Gold}");
+            Console.WriteLine($"monster str: {rep.Monster_strength}, hel: {rep.Monster_health}, ag: {rep.Monster_agility}, dex: {rep.Monster_dexterity}");
         }
     }
 }
