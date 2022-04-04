@@ -49,5 +49,27 @@ namespace Queslar_Cave_Log_Analyzer
         public static Regex agility = new Regex("(?<!Monster.Agility:.)(?<=Agility: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
 
         public static Regex dexterity = new Regex("(?<!Monster.Dexterity:.)(?<=Dexterity: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex rare_wootz = new Regex("(?<=Rare Wootz: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex epic_wootz = new Regex("(?<=Epic Wootz: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex magical_wootz = new Regex("(?<=Magical Wootz: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex unique_wootz = new Regex("(?<=Unique Wootz: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex relic_wootz = new Regex("(?<=Relic Wootz: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex frog_toe = new Regex("(?<=Frog Toe: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex dog_tongue = new Regex("(?<=Dog Tongue: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex lizard_leg = new Regex("(?<=Lizard Leg: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex wolf_tooth = new Regex("(?<=Wolf Tooth: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        
     }
 }
