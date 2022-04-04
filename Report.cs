@@ -195,41 +195,41 @@ namespace Queslar_Cave_Log_Analyzer
 
         #region Wootz
 
-        private int rare_wootz;
+        private ulong rare_wootz;
 
-        public int Rare_wootz
+        public ulong Rare_wootz
         {
             get { return rare_wootz; }
             set { rare_wootz = value; }
         }
 
-        private int epicWootz;
+        private ulong epicWootz;
 
-        public int Epic_wootz    
+        public ulong Epic_wootz    
         {
             get { return epicWootz; }
             set { epicWootz = value; }
         }
 
-        private int magical_wootz;
+        private ulong magical_wootz;
 
-        public int Magical_wootz
+        public ulong Magical_wootz
         {
             get { return magical_wootz; }
             set { magical_wootz = value; }
         }
 
-        private int unique_wootz;
+        private ulong unique_wootz;
 
-        public int Unique_wootz
+        public ulong Unique_wootz
         {
             get { return unique_wootz; }
             set { unique_wootz = value; }
         }
 
-        private int relic_wootz;
+        private ulong relic_wootz;
 
-        public int Relic_wootz
+        public ulong Relic_wootz
         {
             get { return relic_wootz; }
             set { relic_wootz = value; }
@@ -240,33 +240,33 @@ namespace Queslar_Cave_Log_Analyzer
 
         #region Materials
 
-        private int frog_toe;
+        private ulong frog_toe;
 
-        public int Frog_toe
+        public ulong Frog_toe
         {
             get { return frog_toe; }
             set { frog_toe = value; }
         }
 
-        private int dog_tongue;
+        private ulong dog_tongue;
 
-        public int Dog_tongue
+        public ulong Dog_tongue
         {
             get { return dog_tongue; }
             set { dog_tongue = value; }
         }
 
-        private int lizard_leg;
+        private ulong lizard_leg;
 
-        public int Lizard_leg
+        public ulong Lizard_leg
         {
             get { return lizard_leg; }
             set { lizard_leg = value; }
         }
 
-        private int wolf_tooth;
+        private ulong wolf_tooth;
 
-        public int Wolf_tooth
+        public ulong Wolf_tooth
         {
             get { return wolf_tooth; }
             set { wolf_tooth = value; }
@@ -525,7 +525,25 @@ namespace Queslar_Cave_Log_Analyzer
 
                 Dexterity = Sumulong(RegexPattern.dexterity, log);
 
-                    
+
+                Rare_wootz = Sumulong(RegexPattern.rare_wootz, log);
+
+                Epic_wootz = Sumulong(RegexPattern.epic_wootz, log);
+
+                Magical_wootz = Sumulong(RegexPattern.magical_wootz, log);
+
+                Unique_wootz = Sumulong(RegexPattern.unique_wootz, log);
+
+                Relic_wootz = Sumulong(RegexPattern.relic_wootz, log);
+
+
+                Frog_toe = Sumulong(RegexPattern.frog_toe, log);
+
+                Dog_tongue = Sumulong(RegexPattern.dog_tongue, log);
+
+                Lizard_leg = Sumulong(RegexPattern.lizard_leg, log);
+
+                Wolf_tooth = Sumulong(RegexPattern.wolf_tooth, log);
             }
         }
 
