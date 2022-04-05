@@ -70,6 +70,40 @@ namespace Queslar_Cave_Log_Analyzer
 
         public static Regex wolf_tooth = new Regex("(?<=Wolf Tooth: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
 
-        
+
+        public static Regex coal = new Regex("(?<=Coal: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex wheat = new Regex("(?<=Wheat: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex oak = new Regex("(?<=Oak: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex shrimp = new Regex("(?<=Shrimp: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex copper = new Regex("(?<=Copper: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex dinkel = new Regex("(?<=Dinkel: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex willow = new Regex("(?<=Willow: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex trout = new Regex("(?<=Trout: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex tin = new Regex("(?<=Tin: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex khroasan = new Regex("(?<=Khroasan: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex teak = new Regex("(?<=Teak: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex loboster = new Regex("(?<=Loboster: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+
+        public static Regex silver = new Regex("(?<=Silver: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex corn = new Regex("(?<=Corn: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex maple = new Regex("(?<=Maple: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        public static Regex bass = new Regex("(?<=Bass: )[0-9,]+", RegexOptions.Singleline | RegexOptions.IgnoreCase);
     }
 }
