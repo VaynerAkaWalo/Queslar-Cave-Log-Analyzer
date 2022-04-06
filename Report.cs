@@ -544,6 +544,42 @@ namespace Queslar_Cave_Log_Analyzer
                 Lizard_leg = Sumulong(RegexPattern.lizard_leg, log);
 
                 Wolf_tooth = Sumulong(RegexPattern.wolf_tooth, log);
+
+
+                Coal = Sumulong(RegexPattern.coal, log);
+
+                Wheat = Sumulong(RegexPattern.wheat, log);
+
+                Oak = Sumulong(RegexPattern.oak, log);
+
+                Shrimp = Sumulong(RegexPattern.shrimp, log);
+
+
+                Copper = Sumulong(RegexPattern.copper, log);
+
+                Dinkel = Sumulong(RegexPattern.dinkel, log);
+
+                Willow = Sumulong(RegexPattern.willow, log);
+
+                Trout =  Sumulong(RegexPattern.trout, log);
+
+
+                Tin = Sumulong(RegexPattern.tin, log);
+
+                Khroasan = Sumulong(RegexPattern.khroasan, log);
+
+                Teak = Sumulong(RegexPattern.teak, log);
+
+                Lobster = Sumulong(RegexPattern.loboster, log);
+
+
+                Silver = Sumulong(RegexPattern.silver, log);
+
+                Corn = Sumulong(RegexPattern.corn, log);
+
+                Maple = Sumulong(RegexPattern.maple, log);
+
+                Bass = Sumulong(RegexPattern.bass, log);
             }
         }
 
