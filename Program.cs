@@ -32,13 +32,7 @@ namespace Queslar_Cave_Log_Analyzer
 
             Report rep = new Report(logs.ToString());
 
-            Console.WriteLine($"caves: {rep.Caves}, Total time in hours: {rep.TotalTime}");
-
-            Console.WriteLine($"diamonds: {rep.Diamonds}, Gold: {rep.Gold}");
-
-            Console.WriteLine($"diamonds/h: {rep.Diamonds / rep.TotalTime}, gold/h: {rep.Gold / rep.TotalTime}");
-
-            Console.WriteLine($"diamonds/day: {rep.Diamonds / rep.TotalTime * 24}, gold/day: {rep.Gold / rep.TotalTime * 24}");
+            rep.Print();
         }
     }
 }

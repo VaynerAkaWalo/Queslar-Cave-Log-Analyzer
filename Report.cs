@@ -583,5 +583,28 @@ namespace Queslar_Cave_Log_Analyzer
             }
         }
 
+        public void Print()
+        {
+            string numbersettings = "#,##0.##";
+
+            Console.WriteLine($"Caves: {Caves}, Total time in hours: {TotalTime}\n");
+
+            Console.WriteLine($"Diamonds - Total: {Diamonds.ToString(numbersettings)} Per hour: {(Diamonds / TotalTime).ToString(numbersettings)} Per day: {(Diamonds / TotalTime * 24).ToString(numbersettings)}\n");
+
+            Console.WriteLine($"Shattered Figheter Gold - Total: {Gold.ToString(numbersettings)} Per hour: {(Gold / TotalTime).ToString(numbersettings)} Per day: {(Gold / TotalTime * 24).ToString(numbersettings)}\n");
+
+
+            double T4s = Silver + Corn + Maple + Bass;
+            Console.WriteLine($"Homestead t4-s - Total: {T4s.ToString(numbersettings)} Per hour: {(T4s / TotalTime).ToString(numbersettings)} Per day: {(T4s / TotalTime * 24).ToString(numbersettings)}");
+
+            double T3s = Tin + Khroasan + Teak + Lobster;
+            Console.WriteLine($"Homestead t3-s - Total: {T3s.ToString(numbersettings)} Per hour: {(T3s / TotalTime).ToString(numbersettings)} Per day: {(T3s / TotalTime * 24).ToString(numbersettings)}");
+
+            double T2s = Copper + Dinkel + Willow + Trout;
+            Console.WriteLine($"Homestead t2-s - Total: {T2s.ToString(numbersettings)} Per hour: {(T2s / TotalTime).ToString(numbersettings)} Per day: {(T2s / TotalTime * 24).ToString(numbersettings)}");
+
+            double T1s = Coal + Wheat + Oak + Shrimp;
+            Console.WriteLine($"Homestead t1-s - Total: {T1s.ToString(numbersettings)} Per hour: {(T1s / TotalTime).ToString(numbersettings)} Per day: {(T1s / TotalTime * 24).ToString(numbersettings)}");
+        }
     }
 }
