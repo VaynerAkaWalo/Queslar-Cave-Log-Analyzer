@@ -4,15 +4,19 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+
 namespace Queslar_Cave_Log_Analyzer
 {
+
     internal class Report
     {
+        static ConsoleWriter _outputProvider = new ConsoleWriter(Console.WriteLine);
+
         #region Properties
 
-        private int caves;
+        private ulong caves;
 
-        public int Caves
+        public ulong Caves
         {
             get { return caves; }
             set { caves = value; }
@@ -28,65 +32,65 @@ namespace Queslar_Cave_Log_Analyzer
             set { totalTime = value; }
         }
 
-        private int totalDepthDiff;
+        private ulong totalDepthDiff;
 
-        public int TotalDepthDiff
+        public ulong TotalDepthDiff
         {
             get { return totalDepthDiff; }
             set { totalDepthDiff = value; }
         }
 
-        private int treasuresFound;
+        private ulong treasuresFound;
 
-        public int TreasuresFound
+        public ulong TreasuresFound
         {
             get { return treasuresFound; }
             set { treasuresFound = value; }
         }
 
-        private int bossesSlain;
+        private ulong bossesSlain;
 
-        public int BossesSlain
+        public ulong BossesSlain
         {
             get { return bossesSlain; }
             set { bossesSlain = value; }
         }
 
-        private int monstersSlain;
+        private ulong monstersSlain;
 
-        public int MonstersSlain
+        public ulong MonstersSlain
         {
             get { return monstersSlain; }
             set { monstersSlain = value; }
         }
 
-        private int tilesTraveled;
+        private ulong tilesTraveled;
 
-        private int tilesTraveledOccurred;
+        private ulong tilesTraveledOccurred;
 
-        public int TilesTraveledOccurred
+        public ulong TilesTraveledOccurred
         {
             get { return tilesTraveledOccurred; }
             set { tilesTraveledOccurred = value; }
         }
 
-        public int TilesTraveled
+        public ulong TilesTraveled
         {
             get { return tilesTraveled; }
             set { tilesTraveled = value; }
         }
 
-        private int tilesCleared;
+        private ulong tilesCleared;
 
-        public int TilesCleared
+        public ulong TilesCleared
         {
             get { return tilesCleared; }
             set { tilesCleared = value; }
         }
 
-        private int tilesLooted;
+        private ulong tilesLooted;
 
-        public int TilesLooted
+        public ulong TilesLooted
         {
             get { return tilesLooted; }
             set { tilesLooted = value; }
@@ -104,8 +108,8 @@ namespace Queslar_Cave_Log_Analyzer
 
         #region LootProperties
 
-        private int diamonds;
-        public int Diamonds
+        private ulong diamonds;
+        public ulong Diamonds
         {
             get { return diamonds; }
             set { diamonds = value; }
@@ -484,26 +488,26 @@ namespace Queslar_Cave_Log_Analyzer
                 {
                     for(int i = 0; i < startingdepthMC.Count; i++)
                     {
-                        TotalDepthDiff += int.Parse(finishingdepthMC[i].ToString().Replace(",","")) - int.Parse(startingdepthMC[i].ToString().Replace(",", ""));
+                        TotalDepthDiff += ulong.Parse(finishingdepthMC[i].ToString().Replace(",","")) - ulong.Parse(startingdepthMC[i].ToString().Replace(",", ""));
                         TotalDepthDiff++;
                     }
                 }
 
-                TreasuresFound = Sumint(RegexPattern.treasuresFound, log);
+                TreasuresFound = Sumulong(RegexPattern.treasuresFound, log);
 
-                BossesSlain = Sumint(RegexPattern.bossesSlain, log);
+                BossesSlain = Sumulong(RegexPattern.bossesSlain, log);
 
-                MonstersSlain = Sumint(RegexPattern.monstersSlain, log);
+                MonstersSlain = Sumulong(RegexPattern.monstersSlain, log);
 
-                TilesTraveled = Sumint(RegexPattern.tilesTraveled, log);
+                TilesTraveled = Sumulong(RegexPattern.tilesTraveled, log);
 
-                TilesCleared = Sumint(RegexPattern.tilesCleared, log);
+                TilesCleared = Sumulong(RegexPattern.tilesCleared, log);
 
-                TilesLooted = Sumint(RegexPattern.tilesLooted, log);
+                TilesLooted = Sumulong(RegexPattern.tilesLooted, log);
 
 
 
-                Diamonds = Sumint(RegexPattern.diamonds, log);
+                Diamonds = Sumulong(RegexPattern.diamonds, log);
 
                 Gold = Sumulong(RegexPattern.gold, log);
 
@@ -585,26 +589,22 @@ namespace Queslar_Cave_Log_Analyzer
 
         public void Print()
         {
-            string numbersettings = "#,##0.##";
-
             Console.WriteLine($"Caves: {Caves}, Total time in hours: {TotalTime}\n");
 
-            Console.WriteLine($"Diamonds - Total: {Diamonds.ToString(numbersettings)} Per hour: {(Diamonds / TotalTime).ToString(numbersettings)} Per day: {(Diamonds / TotalTime * 24).ToString(numbersettings)}\n");
+            _outputProvider.PrintResult("Diamonds", Diamonds, TotalTime);
+            _outputProvider.PrintResult("Shattered Gold", Gold, TotalTime);
 
-            Console.WriteLine($"Shattered Figheter Gold - Total: {Gold.ToString(numbersettings)} Per hour: {(Gold / TotalTime).ToString(numbersettings)} Per day: {(Gold / TotalTime * 24).ToString(numbersettings)}\n");
+            ulong T4s = Silver + Corn + Maple + Bass;
+            ulong T3s = Tin + Khroasan + Teak + Lobster;
+            ulong T2s = Copper + Dinkel + Willow + Trout;
+            ulong T1s = Coal + Wheat + Oak + Shrimp;
 
-
-            double T4s = Silver + Corn + Maple + Bass;
-            Console.WriteLine($"Homestead t4-s - Total: {T4s.ToString(numbersettings)} Per hour: {(T4s / TotalTime).ToString(numbersettings)} Per day: {(T4s / TotalTime * 24).ToString(numbersettings)}");
-
-            double T3s = Tin + Khroasan + Teak + Lobster;
-            Console.WriteLine($"Homestead t3-s - Total: {T3s.ToString(numbersettings)} Per hour: {(T3s / TotalTime).ToString(numbersettings)} Per day: {(T3s / TotalTime * 24).ToString(numbersettings)}");
-
-            double T2s = Copper + Dinkel + Willow + Trout;
-            Console.WriteLine($"Homestead t2-s - Total: {T2s.ToString(numbersettings)} Per hour: {(T2s / TotalTime).ToString(numbersettings)} Per day: {(T2s / TotalTime * 24).ToString(numbersettings)}");
-
-            double T1s = Coal + Wheat + Oak + Shrimp;
-            Console.WriteLine($"Homestead t1-s - Total: {T1s.ToString(numbersettings)} Per hour: {(T1s / TotalTime).ToString(numbersettings)} Per day: {(T1s / TotalTime * 24).ToString(numbersettings)}");
+            _outputProvider.PrintResult("Homestead t4-s", T4s, TotalTime);
+            _outputProvider.PrintResult("Homestead t3-s", T3s, TotalTime);
+            _outputProvider.PrintResult("Homestead t2-s", T2s, TotalTime);
+            _outputProvider.PrintResult("Homestead t1-s", T1s, TotalTime);
+           
+            
         }
     }
 }
