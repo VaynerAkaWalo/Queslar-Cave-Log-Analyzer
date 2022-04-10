@@ -603,8 +603,14 @@ namespace Queslar_Cave_Log_Analyzer
             _outputProvider.PrintResult("Homestead t3-s", T3s, TotalTime);
             _outputProvider.PrintResult("Homestead t2-s", T2s, TotalTime);
             _outputProvider.PrintResult("Homestead t1-s", T1s, TotalTime);
-           
-            
+
+            _outputProvider.PrintResult("Rare Wootz", Rare_wootz, TotalTime);
+            _outputProvider.PrintResult("Epic Wootz", Epic_wootz, TotalTime);
+            _outputProvider.PrintResult("Magical Wootz", Magical_wootz, TotalTime);
+            _outputProvider.PrintResult("Unique Wootz", Unique_wootz, TotalTime);
+            _outputProvider.PrintResult("Relic Wootz", Relic_wootz, TotalTime);
+
+
         }
     }
 }
