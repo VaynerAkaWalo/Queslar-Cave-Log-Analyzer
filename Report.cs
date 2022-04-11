@@ -610,7 +610,15 @@ namespace Queslar_Cave_Log_Analyzer
             _outputProvider.PrintResult("Unique Wootz", Unique_wootz, TotalTime);
             _outputProvider.PrintResult("Relic Wootz", Relic_wootz, TotalTime);
 
+            _outputProvider.PrintResult("Strength", Strength, TotalTime);
+            _outputProvider.PrintResult("Health", Health, TotalTime);
+            _outputProvider.PrintResult("Agility", Agility, TotalTime);
+            _outputProvider.PrintResult("Dexterity", Dexterity, TotalTime);
 
+            _outputProvider.PrintResult("Monster Strength", Monster_strength, TotalTime);
+            _outputProvider.PrintResult("Monster Health", Monster_health, TotalTime);
+            _outputProvider.PrintResult("Monster Agility", Monster_agility, TotalTime);
+            _outputProvider.PrintResult("Monster Dexterity", Monster_dexterity, TotalTime);
         }
     }
 }
