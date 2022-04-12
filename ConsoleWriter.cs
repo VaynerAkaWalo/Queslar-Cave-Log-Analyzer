@@ -25,7 +25,15 @@ namespace Queslar_Cave_Log_Analyzer
 
         public void PrintResult(string header, ulong item, double totalTime)
         {
-            _outputProvider($"{header.PadRight(headerPadding)} | Total: {item.ToString(numberFormat).PadLeft(padding)} | Per hour: {(item / totalTime).ToString(numberFormat).PadLeft(padding)} | Per day: {(item / totalTime * 24).ToString(numberFormat).PadLeft(padding)} | ");
+            _outputProvider($"| {header.PadRight(headerPadding)} | Total: {item.ToString(numberFormat).PadLeft(padding)} | Per hour: {(item / totalTime).ToString(numberFormat).PadLeft(padding)} | Per day: {(item / totalTime * 24).ToString(numberFormat).PadLeft(padding)} | ");
+        }
+
+        public void PrintLine()
+        {
+            int _length = 2 + headerPadding + 10 + padding + 13 + padding + 12 + padding + 2;
+            StringBuilder line = new StringBuilder();
+            line.Append('-', _length);
+            _outputProvider(line.ToString());
         }
 
     }

@@ -591,8 +591,12 @@ namespace Queslar_Cave_Log_Analyzer
         {
             Console.WriteLine($"Caves: {Caves}, Total time in hours: {TotalTime}\n");
 
+            _outputProvider.PrintLine();
+
             _outputProvider.PrintResult("Diamonds", Diamonds, TotalTime);
             _outputProvider.PrintResult("Shattered Gold", Gold, TotalTime);
+
+            _outputProvider.PrintLine();
 
             ulong T4s = Silver + Corn + Maple + Bass;
             ulong T3s = Tin + Khroasan + Teak + Lobster;
@@ -604,21 +608,29 @@ namespace Queslar_Cave_Log_Analyzer
             _outputProvider.PrintResult("Homestead t2-s", T2s, TotalTime);
             _outputProvider.PrintResult("Homestead t1-s", T1s, TotalTime);
 
+            _outputProvider.PrintLine();
+
             _outputProvider.PrintResult("Rare Wootz", Rare_wootz, TotalTime);
             _outputProvider.PrintResult("Epic Wootz", Epic_wootz, TotalTime);
             _outputProvider.PrintResult("Magical Wootz", Magical_wootz, TotalTime);
             _outputProvider.PrintResult("Unique Wootz", Unique_wootz, TotalTime);
             _outputProvider.PrintResult("Relic Wootz", Relic_wootz, TotalTime);
 
+            _outputProvider.PrintLine();
+
             _outputProvider.PrintResult("Strength", Strength, TotalTime);
             _outputProvider.PrintResult("Health", Health, TotalTime);
             _outputProvider.PrintResult("Agility", Agility, TotalTime);
             _outputProvider.PrintResult("Dexterity", Dexterity, TotalTime);
 
+            _outputProvider.PrintLine();
+
             _outputProvider.PrintResult("Monster Strength", Monster_strength, TotalTime);
             _outputProvider.PrintResult("Monster Health", Monster_health, TotalTime);
             _outputProvider.PrintResult("Monster Agility", Monster_agility, TotalTime);
             _outputProvider.PrintResult("Monster Dexterity", Monster_dexterity, TotalTime);
+
+            _outputProvider.PrintLine();
         }
     }
 }
